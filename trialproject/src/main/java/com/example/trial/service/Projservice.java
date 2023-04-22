@@ -38,4 +38,13 @@ public class Projservice {
 		
 	}
 
+
+	public Proj getbyname(String name) {
+		// TODO Auto-generated method stub
+		return repo.findByname(name);
+	}
+
+
+	
+
 }

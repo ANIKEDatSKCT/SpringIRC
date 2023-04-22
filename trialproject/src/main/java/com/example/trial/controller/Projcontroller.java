@@ -44,5 +44,10 @@ public class Projcontroller {
 		serve.deletebyid(byid);
 		return "Deletion was Successful";
 	}
+	@GetMapping("/project/name/{name}")
+	public Proj getbyname(@PathVariable("name") String name )
+	{
+		return serve.getbyname(name);
+	}
 
 }

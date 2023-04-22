@@ -1,5 +1,7 @@
 package com.example.trial.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,26 @@ public class Projservice {
 	public Proj saveInfo(Proj pr)
 	{
 		return repo.save(pr);
+	}
+
+
+	public List<Proj> fetchdetails() {
+		// TODO Auto-generated method stub
+		return repo.findAll();
+	}
+
+
+	public Proj fetchbyId(int byid) {
+		// TODO Auto-generated method stub
+		return repo.findById(byid).get();
+	}
+
+
+	public void deletebyid(int byid) {
+		
+		
+		 repo.deleteById(byid);
+		
 	}
 
 }

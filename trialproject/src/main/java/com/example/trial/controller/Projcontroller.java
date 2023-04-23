@@ -45,7 +45,7 @@ public class Projcontroller {
 		return "Deletion was Successful";
 	}
 	@GetMapping("/project/name/{name}")
-	public Proj getbyname(@PathVariable("name") String name )
+	public List<Proj> getbyname(@PathVariable("name") String name )
 	{
 		return serve.getbyname(name);
 	}

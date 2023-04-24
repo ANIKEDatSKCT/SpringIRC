@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.trial.model.Day4;
@@ -51,6 +52,16 @@ public class Day4Controller {
 	{
 		return serve.updatedetails(da);
 	}
+	
+	@DeleteMapping("/busbyreqparam")
+	public String deletebyidusingreqparam(@RequestParam("id")int byid)
+	{
+		serve.deletebyid(byid);
+		return "the Deletion was successful";
+	}
+	
+	
+	
 	
 	
 

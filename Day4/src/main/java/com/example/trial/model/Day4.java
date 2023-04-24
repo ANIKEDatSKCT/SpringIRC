@@ -11,7 +11,7 @@ public class Day4 {
 	
 	@Id
 	private int id;
-	
+	@Column(name="drop_spot")
 	private String placename;
 	
 	private String time;

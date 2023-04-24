@@ -42,6 +42,11 @@ public class Day4Service {
 		return  repo.saveAndFlush(da);
 	}
 
+	public List<Day4> getbyname(String name) {
+		// TODO Auto-generated method stub
+		return repo.findByplacename(name);
+	}
+
 
 		
 	

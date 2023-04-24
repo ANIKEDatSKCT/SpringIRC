@@ -1,5 +1,6 @@
 package com.example.trial.controller;
 
+
 import java.util.List;
 import java.util.Optional;
 
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.trial.model.Day4;
+
 import com.example.trial.service.Day4Service;
 
 @RestController
@@ -60,8 +62,11 @@ public class Day4Controller {
 		return "the Deletion was successful";
 	}
 	
-	
-	
+	@GetMapping("/byname/name/{name}")
+	public List<Day4> getbyname(@PathVariable("name") String name )
+	{
+		return serve.getbyname(name);
+	}
 	
 	
 

@@ -5,6 +5,9 @@ import java.util.Objects;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 
@@ -45,6 +48,25 @@ public class Day4Service {
 	public List<Day4> getbyname(String name) {
 		// TODO Auto-generated method stub
 		return repo.findByplacename(name);
+	}
+
+	public List<Day4> sorting(String name) {
+		// TODO Auto-generated method stub
+		return repo.findAll(Sort.by(name).descending());
+	}
+
+	public List<Day4> pagination(int num, int size) {
+		// TODO Auto-generated method stub
+		Page<Day4> p=repo.findAll(PageRequest.of(num, size));
+
+		return p.getContent()
+;
+	}
+
+	public List<Day4> pagesorting(int num, int size, String name) {
+		// TODO Auto-generated method stub
+		Page<Day4> p=repo.findAll(PageRequest.of(num, size, Sort.by(name).descending()));
+		return p.getContent();
 	}
 
 

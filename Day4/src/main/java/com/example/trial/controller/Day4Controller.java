@@ -69,6 +69,25 @@ public class Day4Controller {
 	}
 	
 	
+	@GetMapping("/sorting/{name}")
+	public List<Day4> sorting(@PathVariable("name") String name)
+	{
+		return serve.sorting(name);
+	}
+	
+	
+	@GetMapping("/pagination/{pnum}/{psize}")
+	public List<Day4> pagination(@PathVariable("pnum")int num,@PathVariable("psize")int size)
+	{
+		return serve.pagination(num,size);
+	}
+	
+	@GetMapping("/paginationsorting/{pnum}/{psize}/{name}")
+	public List<Day4> pagesorting(@PathVariable("pnum")int num,@PathVariable("psize")int size,@PathVariable("name")String name)
+	{
+		return serve.pagesorting(num,size,name);
+	}
+	
 	
 	
 

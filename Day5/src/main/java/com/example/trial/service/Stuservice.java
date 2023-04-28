@@ -45,6 +45,32 @@ public class Stuservice {
 		return p.getContent();
 	}
 
+	public List<Stumodel> getdet() {
+		// TODO Auto-generated method stub
+		return repo.getAllData();
+	}
+
+	public List<Stumodel> getdatabyid(int id) {
+		// TODO Auto-generated method stub
+		return repo.getByid(id);
+	}
+
+	public List<Stumodel> getdatabyname(String name) {
+		// TODO Auto-generated method stub
+		return repo.getByname(name);
+	}
+
+	public List<Stumodel> getbyrollno(String rn) {
+		// TODO Auto-generated method stub
+		return repo.getByrollno(rn);
+	}
+
+	public List<Stumodel> inbetween(int start, int end) {
+		// TODO Auto-generated method stub
+		return repo.between(start, end);
+	}
+
+	
 	
 	
 

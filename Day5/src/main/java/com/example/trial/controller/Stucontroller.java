@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.trial.model.Stumodel;
+import com.example.trial.repository.Sturepo;
 import com.example.trial.service.Stuservice;
 
 @RestController
@@ -18,6 +19,9 @@ public class Stucontroller {
 	
 	@Autowired
 	public Stuservice serve;
+	
+	@Autowired
+	public Sturepo re;
 	
 	@PostMapping("/post")
 	public Stumodel postdetails(@RequestBody Stumodel stu)
@@ -50,6 +54,36 @@ public class Stucontroller {
 	public List<Stumodel> paginationsorting(@PathVariable("pnum")int pnum,@PathVariable("psize")int psize,@PathVariable("name")String name)
 	{
 		return serve.paginationsorting(pnum,psize,name);
+	}
+	
+	@GetMapping("/gett")
+	public List<Stumodel> getdet()
+	{
+		return serve.getdet();
+	}
+	
+	@GetMapping("/gett/{id}")
+	public List<Stumodel> getdatabyid(@PathVariable("id")int id)
+	{
+		return serve.getdatabyid(id);
+	}
+	
+	@GetMapping("/gett/name/{name}")
+	public List<Stumodel> getdatabyname(@PathVariable("name")String name)
+	{
+		return serve.getdatabyname(name);
+	}
+	
+	@GetMapping("/gett/rollno/{rollno}")
+	public List<Stumodel> getbyrollno(@PathVariable("rollno")String rn)
+	{
+		return serve.getbyrollno(rn);
+	}
+	
+	@GetMapping("/getp/{start}/{end}")
+	public List<Stumodel> inbetween(@PathVariable("start")int start,@PathVariable("end")int end)
+	{
+		return serve.inbetween(start,end);
 	}
 
 }

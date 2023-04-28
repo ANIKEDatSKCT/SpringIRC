@@ -14,6 +14,8 @@ import com.example.trial.model.Stumodel;
 import com.example.trial.repository.Sturepo;
 import com.example.trial.service.Stuservice;
 
+import jakarta.xml.soap.Name;
+
 @RestController
 public class Stucontroller {
 	
@@ -84,6 +86,13 @@ public class Stucontroller {
 	public List<Stumodel> inbetween(@PathVariable("start")int start,@PathVariable("end")int end)
 	{
 		return serve.inbetween(start,end);
+	}
+	
+	@DeleteMapping("/del/{id}")
+	public String delet(@PathVariable("id")int id)
+	{
+		re.dele(id);
+		return "deleted using query";
 	}
 
 }

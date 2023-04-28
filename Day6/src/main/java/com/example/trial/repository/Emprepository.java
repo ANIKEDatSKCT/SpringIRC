@@ -25,8 +25,8 @@ public interface Emprepository extends JpaRepository<Empmodel, Integer> {
 	
 	@Modifying
 	@Transactional
-	@Query(value="update day6 set name=?name where id=?id",nativeQuery = true)
-	public Empmodel updateit(Empmodel em,@Param("name")String name,@Param("id")int id);
+	@Query(value="update day6 set name=?1 where name=?2",nativeQuery = true)
+	public void updateit(@Param("name")String name,@Param("name1")String name2);
 	
 
 }

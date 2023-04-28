@@ -43,10 +43,11 @@ public class Empcontroller {
 		return "deletion was successful";
 	}
 	
-	@PutMapping("/put/{name}/{id}")
-	public Empmodel upda(@RequestBody Empmodel em,@PathVariable("name")String name,@PathVariable("id")int id)
+	@PutMapping("/put/{name}/{name2}")
+	public String update(@PathVariable("name")String name,@PathVariable("name2")String name2)
 	{
-		return rep.updateit(em, name, id);
+		rep.updateit(name, name2);
+		return "The Deletion was successful";
 	}
 
 }

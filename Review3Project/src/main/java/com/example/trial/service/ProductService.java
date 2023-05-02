@@ -33,7 +33,7 @@ public class ProductService {
 
 	public Model1 update(Model1 mod, int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return repo.saveAndFlush(mod);
 	}
 
 	public Model1 getbyid(int id) {

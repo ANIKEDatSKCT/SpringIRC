@@ -11,6 +11,5 @@ public interface Day4repo extends JpaRepository<Day4, Integer> {
 	
 	public List<Day4> findByplacename( String name);
 	
-	Day4 findByusername(String username);
 
 }

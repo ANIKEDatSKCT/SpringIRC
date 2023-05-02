@@ -2,7 +2,6 @@ package com.example.trial.controller;
 
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -89,16 +88,4 @@ public class Day4Controller {
 		return serve.pagesorting(num,size,name);
 	}
 	
-	@PostMapping("/login")
-	public String login(@RequestBody Map<String,String> logicData)
-	{
-		String username=logicData.get("username");
-		String password=logicData.get("password");
-		String result=serve.checkLogin(username,password);
-		return result;
-	}
-	
-	
-	
-
 }

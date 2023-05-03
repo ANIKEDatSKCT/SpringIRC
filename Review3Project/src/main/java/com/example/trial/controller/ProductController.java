@@ -26,9 +26,9 @@ public class ProductController {
 	
 	@Tag(name = "GET ALL DETAILS IN THE ONE TO MANY PROJECT",description = "provides the details in the Main class")
 	@GetMapping("/getall")
-	public List<Model1> getdet(Model1 me)
+	public List<Model1> getdet()
 	{
-		return ser.getdet(me);
+		return ser.getdet();
 	}
 	
 	@Tag(name = "TO POST VALUES IN MAPPING PROJECT",description = "posting the details in the main class")
@@ -109,6 +109,14 @@ public class ProductController {
 	public List<Querytesting> betveen(@PathVariable("one")int one,@PathVariable("two")int two)
 	{
 		return ser.betveen(one,two);
+	}
+	
+	
+	@Tag(name = "JPQL LIKE METHOD",description = "this method is used to get all the name starting with the letter A")
+	@GetMapping("/jpqllike")
+	public List<Querytesting> likee()
+	{
+		return ser.likee();
 	}
 
 }

@@ -49,6 +49,9 @@ public interface QuerytestingRepositoryt extends JpaRepository<Querytesting, Int
 	@Query(value="select s from Querytesting s where s.tage between ?1 and ?2 ")
 	public List<Querytesting>between(int one,int two);
 	
+	@Query(value="select s from Querytesting s where tname like 'A%'")
+	public List<Querytesting> like();
+	
 	
 
 }

@@ -19,9 +19,9 @@ public class ProductService {
 	@Autowired
 	public QuerytestingRepositoryt queryrep;
 
-	public List<Model1> getdet(Model1 me) {
+	public List<Model1> getdet() {
 		// TODO Auto-generated method stub
-		return repo.GetDetails(me);
+		return repo.GetDetails();
 	}
 
 	public Model1 savedat(Model1 mod) {
@@ -86,6 +86,11 @@ public class ProductService {
 	public List<Querytesting> betveen(int one, int two) {
 		// TODO Auto-generated method stub
 		return queryrep.between(one, two);
+	}
+
+	public List<Querytesting> likee() {
+		// TODO Auto-generated method stub
+		return queryrep.like();
 	}
 
 	

@@ -16,7 +16,7 @@ public interface ModelRepository extends JpaRepository<Model1, Integer> {
 	
 	
 	@Query(value="select * from product",nativeQuery = true)
-	public List<Model1> GetDetails(Model1 me);
+	public List<Model1> GetDetails();
 	
 	
 	

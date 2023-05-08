@@ -45,7 +45,7 @@ public interface QuerytestingRepositoryt extends JpaRepository<Querytesting, Int
 	@Query(value="delete from Querytesting s where s.tname=?1")
 	public void jpqldelete(String name);
 	
-	
+	 
 	@Query(value="select s from Querytesting s where s.tage between ?1 and ?2 ")
 	public List<Querytesting>between(int one,int two);
 	

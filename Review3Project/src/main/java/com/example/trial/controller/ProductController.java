@@ -1,6 +1,7 @@
 package com.example.trial.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.trial.Model.Logincheck;
 import com.example.trial.Model.Model1;
 import com.example.trial.Model.Querytesting;
 import com.example.trial.service.ProductService;
@@ -117,6 +119,41 @@ public class ProductController {
 	public List<Querytesting> likee()
 	{
 		return ser.likee();
+	}
+	
+	@Tag(name="ADD DETAILS IN LOGINTABLE",description = "Used to add details in login table")
+	@PostMapping("/adddetails")
+	public Logincheck add(@RequestBody Logincheck lo)
+	{
+		return ser.add(lo);
+	}
+	@Tag(name="To VERIFY LOGIN",description = "The username and password are used to verify the data ")
+	@PostMapping("/login")
+	public String login(@RequestBody Map<String,String> loginDataMap)
+	{
+		String username = loginDataMap.get("username");
+		String password = loginDataMap.get("password");
+		String result = ser.loginCheckData(username, password);
+		return result;
+	}
+	@Tag(name = "LOG DATA",description = "To get all details in login")
+	@GetMapping("/alllogs")
+	public List<Logincheck> alllog()
+	{
+		return ser.alllog();
+	}
+	
+	@Tag(name="Sorting",description = "sorting using name")
+	@GetMapping("/sort/{name}")
+	public List<Querytesting> sorting(@PathVariable("name")String name)
+	{
+		return ser.sorting(name);
+	}
+	
+	@GetMapping("/page/{pnum}/{psize}")
+	public List<Querytesting> pagination(@PathVariable("pnum")int num,@PathVariable("psize")int size)
+	{
+		return ser.pagination(num,size);
 	}
 
 }

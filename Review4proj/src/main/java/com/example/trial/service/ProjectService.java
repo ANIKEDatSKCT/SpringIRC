@@ -60,10 +60,4 @@ public class ProjectService implements ProjectServiceInterface{
 		larep.deleteById(id);
 	}
 	
-	
-	
-	
-	
-	
-
 }

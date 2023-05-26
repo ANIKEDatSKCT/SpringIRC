@@ -16,7 +16,6 @@ public class AdminModel {
 	private String userrole;
 	
 	
-	
 	public AdminModel() {
 		super();
 	}
